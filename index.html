@@ -28,29 +28,91 @@
             </div>
 
             <div class="tabbedContent" id="manualControls">
-                <div id="controlBoard">
-                    <div class="control-board-row">
-                        <button className="squareInvisible"/>
-                        <button className="square" id="upButton"></button>
-                        <button className="squareInvisible"/>
-                    </div>
-                    <div clacc="control-board-row">
-                        <button className="square" id="leftButton"></button>
-                        <button className="squareInvisible"/>
-                        <button className="square" id="rightButton"></button>
-                    </div>
-                    <div class="control-board-row">
-                        <button className="squareInvisible"/>
-                        <button className="square" id="downButton"></button>
-                        <button className="squareInvisible"/>
-                    </div>
-                </div>
+                <table class="controlBoard">
+                    <tr class="control-board-row">
+                        <td class="invisibleSpacer" />
+                        <td class="buttonContainer">
+                            <button id="upButton">
+                                <div class="svgAlt">
+                                    ▲
+                                </div>
+                                <div class="svgArrow" id="upArrow">
+                                    <svg viewbox="0 0 100 100" preserveAspectRatio="meet">
+                                        <path d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </td>
+                        <td class="invisibleSpacer" />
+                    </tr>
+                    <tr class="control-board-row">
+                        <td class="buttonContainer">
+                            <button id="leftButton">
+                                <div class="svgAlt">
+                                    ◀
+                                </div>
+                                <div class="svgArrow" id="leftArrow">
+                                    <svg viewbox="0 0 100 100" preserveAspectRatio="meet">
+                                        <path d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </td>
+                        <td class="buttonContainer">
+                            <button id="stopButton">
+                                <div class="svgAlt">
+                                    STOP
+                                </div>
+                                <div class="svgOctagon">
+                                    <svg viewbox="-100 -100 200 200" preserveAspectRatio="meet">
+                                        <polygon points="92.39,38.27 38.27,92.39 -38.27,92.39 -92.39,38.27 -92.39,-38.27 -38.27,-92.39 38.27,-92.39 92.37,-38.27" fill="#DB251A"/>
+                                        <text x="0" y="0" text-anchor="middle" stroke="#FFFFFF" stroke-width="4.5px" dy=".3em" font-size="250%">STOP</text>
+                                    </svg>
+                                </div>
+                            </button>
+                        </td>
+                        <td class="buttonContainer">
+                            <button id="rightButton">
+                                <div class="svgAlt">
+                                    ▶
+                                </div>
+                                <div class="svgArrow" id="rightArrow">
+                                    <svg viewbox="0 0 100 100" preserveAspectRatio="meet">
+                                        <path d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z" fill="black"/>
+                                    </svg>
+                                </div>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="control-board-row">
+                        <td class="invisibleSpacer" />
+                        <td class="buttonContainer">
+                            <button id="downButton">
+                                <div class="svgAlt">
+                                    ▼
+                                </div>
+                                <div class="svgArrow" id="downArrow">
+                                    <svg viewbox="0 0 100 100" preserveAspectRatio="meet">
+                                        <path d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </td>
+                        <td class="invisibleSpacer" />
+                    </tr>
+                </table>
             </div>
 
             <div class="tabbedContent" id="mapGPS">
+                <p>
+                    GPS/MAP
+                </p>
             </div>
 
             <div class="tabbedContent" id="rawData">
+                <p>
+                    RAW DATAS
+                </p>
             </div>
 
         </div>

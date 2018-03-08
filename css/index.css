@@ -3,61 +3,117 @@ html, body { height: 100%; width: 100%; margin: 0; }
 .mainContent {
     height: 100%;
     width: 100%;
+    background: #222222;
+    overflow: hidden;
 }
 
-.square {
-    background: #fff;
-    border: 1px solid #999;
-    float: left;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 34px;
-    height: 34px;
-    margin-right: -1px;
-    margin-top: -1px;
-    padding: 0;
-    text-align: center;
-    width: 34px;
+.svgAlt {
+    display: none;
 }
 
-.squareinvisible {
-    background: #fff;
-    float: left;
-    border: 0px solid #999;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 34px;
-    height: 34px;
-    margin-right: -1px;
-    margin-top: -1px;
-    padding: 0;
-    text-align: center;
-    width: 34px;
+.svgArrow, .svgOctagon{
+    height:100%;
+    width:100%;
 }
 
-.control-board-row:after {
-    clear: both;
-    content: "";
-    display: table;
+#upArrow {
+    transform: rotate(90deg);
+}
+
+#rightArrow {
+    transform: rotate(180deg);
+}
+
+#downArrow {
+    transform: rotate(270deg);
+}
+
+tbody {
+    height:100%;
+    width:100%;
+}
+
+svg {
+    vertical-align: center;
+    horiz-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+path {
+    height: 100%;
+    width: 100%;
+}
+
+.controlBoard {
+    height: 100%;
+    width: 100%;
+    padding: 1% 1% 1% 1%;
+    alignment: left;
+}
+
+.buttonContainer {
+    background: #222222;
+    color: white;
+    height: 33.3%;
+    width: 33.3%;
+}
+
+.buttonContainer button {
+    background: #222222;
+    color: white;
+    width: 100%;
+    height: 100%;
+    border: 1px white;
+    padding: 0px 0px 0px 0px;
+}
+
+.buttonContainer button:hover .svgArrow svg path {
+    fill: #404040;
+}
+
+.buttonContainer button:active .svgArrow svg path{
+    fill: #333333;
+    stroke: #bfbfbf;
+}
+
+.buttonContainer button:hover .svgOctagon svg polygon {
+    fill: #EA5048;
+}
+
+.buttonContainer button:active .svgOctagon svg polygon {
+    fill: #e73b32;
+}
+
+.invisibleSpacer {
+    background: #222222;
+    border: none;
+    height: 33.3%;
+    width: 33.3%;
+}
+
+.control-board-row {
+    width: 100%;
+    height: 33.3%;
 }
 
 .tabs {
     overflow: hidden;
-    border: 1px solid #ccc;
+    border: none;
     background-color: #f1f1f1;
     height: 10%;
 }
 
 .tabs button:hover {
-    background-color: #ddd;
+    background-color: lightgray;
 }
 
-.tabs button.active {
-    background-color: #ccc;
+.tabs button:active {
+    background-color: darkgray;
 }
 
 .tabs button {
-    background-color: inherit;
+    background-color: gray;
     float: left;
     border: none;
     outline: none;
@@ -69,9 +125,10 @@ html, body { height: 100%; width: 100%; margin: 0; }
 }
 
 .tabbedContent {
+    background: #222222;
     display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
+    height: 90%;
+    width: 100%;
+    padding: 0px 0px 0px 0px
 }
 
