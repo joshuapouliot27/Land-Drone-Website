@@ -49,7 +49,7 @@ function buttonPressed(element) {
     currentJSONData = null;
     webSocket.send("return");
     while (currentJSONData === null) {
-        timer(.01);
+        sleep(.01);
     }
     currentJSONData.moving_forward = false;
     currentJSONData.moving_backward = false;
