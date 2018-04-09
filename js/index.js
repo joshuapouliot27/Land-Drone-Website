@@ -35,8 +35,10 @@ function loadConnection() {
     webSocket = new WebSocket("ws://127.0.0.1:8081")
     webSocket.onerror = function (err) {
         console.log('error: ', err);
-    }
-    webSocket.onmessage = saveJSONData(message)
+    };
+    webSocket.onmessage = function (message) {
+        saveJSONData(message);
+    };
 }
 
 function saveJSONData(message) {
@@ -45,7 +47,7 @@ function saveJSONData(message) {
 
 function buttonPressed(element) {
     currentJSONData = null;
-    webSocket.send("return")
+    webSocket.send("return");
     while (currentJSONData === null) {
         timer(.01);
     }
