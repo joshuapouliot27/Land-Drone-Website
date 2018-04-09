@@ -15,16 +15,15 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/index.css">
     </head>
-    <body>
+    <body onload="loadConnection()">
         <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
 
         <div class="mainContent" id="mainContent">
             <div class="tabs">
-                <button class="tabLinks" onclick="tabClicked('manualControls')">Controls</button>
-                <button class="tabLinks" onclick="tabClicked('mapGPS')">Map/GPS</button>
-                <button class="tabLinks" onclick="tabClicked('rawData')">Raw Data</button>
+                <button class="tabLinks" onclick="tabClicked('manualControls', this)">Manual Control</button>
+                <button class="tabLinks" onclick="tabClicked('mapGPS', this)">Automated</button>
             </div>
 
             <div class="tabbedContent" id="manualControls">
@@ -32,7 +31,7 @@
                     <tr class="control-board-row">
                         <td class="invisibleSpacer" />
                         <td class="buttonContainer">
-                            <button id="upButton">
+                            <button id="upButton" onclick="buttonPressed(this)">
                                 <div class="svgAlt">
                                     ▲
                                 </div>
@@ -47,7 +46,7 @@
                     </tr>
                     <tr class="control-board-row">
                         <td class="buttonContainer">
-                            <button id="leftButton">
+                            <button id="leftButton" onclick="buttonPressed(this)">
                                 <div class="svgAlt">
                                     ◀
                                 </div>
@@ -59,7 +58,7 @@
                             </button>
                         </td>
                         <td class="buttonContainer">
-                            <button id="stopButton">
+                            <button id="stopButton" onclick="buttonPressed(this)">
                                 <div class="svgAlt">
                                     STOP
                                 </div>
@@ -72,7 +71,7 @@
                             </button>
                         </td>
                         <td class="buttonContainer">
-                            <button id="rightButton">
+                            <button id="rightButton" onclick="buttonPressed(this)">
                                 <div class="svgAlt">
                                     ▶
                                 </div>
@@ -87,7 +86,7 @@
                     <tr class="control-board-row">
                         <td class="invisibleSpacer" />
                         <td class="buttonContainer">
-                            <button id="downButton">
+                            <button id="downButton" onclick="buttonPressed(this)">
                                 <div class="svgAlt">
                                     ▼
                                 </div>
