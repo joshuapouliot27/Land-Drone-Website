@@ -71,6 +71,6 @@ function buttonPressed(element) {
     } else if (element.id.toLowerCase().contains("down")) {
         currentJSONData.moving_backward = true;
     }
-    webSocket.send(currentJSONData.stringify())
+    webSocket.send(JSON.stringify(currentJSONData))
 
 }
