@@ -23,17 +23,19 @@ function checkMessage(message) {
 }
 
 function makeEmptyJSON() {
-    var JSONData = JSON.parse("");
-    JSONData.moving_forward = false;
-    JSONData.moving_right = false;
-    JSONData.moving_left = false;
-    JSONData.moving_backward = false;
-    JSONData.current_latitude = null;
-    JSONData.current_longitude = null;
-    JSONData.current_direction_degrees = null;
-    JSONData.current_distance_ahead = null;
-    JSONData.stop_everything = null;
-    return JSONData;
+    var JSONObj = {
+        moving_forward: false,
+        moving_right: false,
+        moving_left: false,
+        moving_backward: false,
+        current_latitude: null,
+        current_longitude: null,
+        current_direction_degrees: null,
+        current_distance_ahead: null,
+        stop_everything: null
+    }
+    var JSONArray = [];
+    return JSON.stringify(JSONArray.push(JSONObj));
 }
 
 function getJSONData() {
