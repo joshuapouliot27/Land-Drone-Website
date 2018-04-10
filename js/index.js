@@ -70,13 +70,13 @@ function buttonPressed(element) {
     currentJSONData.moving_left = false;
     currentJSONData.moving_right = false;
     console.log("element: "+element.id);
-    if (element.id.toLowerCase() === "leftButton") {
+    if (element.id.toLowerCase() === "leftbutton") {
         currentJSONData.moving_left = true;
-    } else if (element.id.toLowerCase() === "rightButton") {
+    } else if (element.id.toLowerCase() === "rightbutton") {
         currentJSONData.moving_right = true;
-    } else if (element.id.toLowerCase() === "upButton") {
+    } else if (element.id.toLowerCase() === "upbutton") {
         currentJSONData.moving_forward = true;
-    } else if (element.id.toLowerCase() === "downButton") {
+    } else if (element.id.toLowerCase() === "downbutton") {
         currentJSONData.moving_backward = true;
     }
     console.log("edited JSON: "+JSON.stringify(currentJSONData));
