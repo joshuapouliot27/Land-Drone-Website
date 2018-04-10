@@ -84,6 +84,7 @@ function buttonPressed(element) {
         editedJSONData.moving_backward = true;
         console.log(editedJSONData.moving_backward.toString());
     }
+    console.log(editedJSONData.moving_left.toString());
     console.log("edited JSON: "+JSON.stringify(editedJSONData));
     webSocket.send(JSON.stringify(editedJSONData));
 
