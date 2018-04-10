@@ -15,6 +15,8 @@ wss.on('connection', function(ws) {
 });
 
 function checkMessage(message) {
+    console.log("message: "+message);
+    console.log("message data: "+message.data);
     if (message.data.toString().toLowerCase() === "return") {
         return true;
     }
