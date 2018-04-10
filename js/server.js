@@ -36,7 +36,7 @@ function makeEmptyJSON() {
     }
     var JSONArray = [];
     JSONArray.push(JSONObj);
-    return JSON.stringify(JSONArrayccmc);
+    return JSON.stringify(JSONArray);
 }
 
 function getJSONData() {
@@ -49,5 +49,7 @@ function getJSONData() {
 }
 
 function saveJSONFile(message) {
-    fs.writeFileSync(json_filename, JSON.parse(message).stringify())
+    JSONObj = JSON.parse(message);
+    JSONStr = JSONObj.stringify();
+    fs.writeFileSync(json_filename, JSONStr);
 }
