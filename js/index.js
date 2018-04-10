@@ -33,10 +33,15 @@ function tabClicked(contentType, element) {
 
 function loadConnection() {
     webSocket = new WebSocket("ws://raspberrypi.local:8081");
-    console.log("Connected Websocket!");
     webSocket.onerror = function (err) {
         console.log('error: ', err);
     };
+    webSocket.onopen = function() {
+        console.log("Connected Websocket!");
+    };
+    webSocket.onclose = function() {
+        console.log("Disconnected Websocket!");
+    }
     webSocket.onmessage = function (message) {
         console.log("recieved message: "+message.data.toString());
         saveJSONData(message.data);
