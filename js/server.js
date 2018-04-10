@@ -15,7 +15,7 @@ wss.on('connection', function(ws) {
 });
 
 function checkMessage(message) {
-    if (message.data.toLowerCase() === "return") {
+    if (message.data.toString().toLowerCase() === "return") {
         return true;
     }
     saveJSONFile(message.data);
