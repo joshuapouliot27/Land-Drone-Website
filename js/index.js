@@ -84,7 +84,8 @@ function buttonPressed(element) {
         editedJSONData.moving_backward = true;
         console.log(editedJSONData.moving_backward.toString());
     }
-    console.log(editedJSONData.moving_left.toString() + "\n" + JSON.stringify(editedJSONData));
+    console.log(editedJSONData.moving_left.toString() + "\n" + JSON.stringify(editedJSONData)
+        + "\n" + editedJSONData["moving_left"].toString());
     webSocket.send(JSON.stringify(editedJSONData));
 
 }
