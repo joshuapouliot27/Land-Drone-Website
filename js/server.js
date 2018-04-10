@@ -35,7 +35,8 @@ function makeEmptyJSON() {
         stop_everything: null
     }
     var JSONArray = [];
-    return JSON.stringify(JSONArray.push(JSONObj));
+    JSONArray.push(JSONObj);
+    return JSON.stringify(JSONArrayccmc);
 }
 
 function getJSONData() {
