@@ -61,12 +61,12 @@ function buttonPressed(element) {
     currentJSONData = null;
     webSocket.send("return");
     while (currentJSONData === null) {
-        sleep(.01);
     }
     currentJSONData.moving_forward = false;
     currentJSONData.moving_backward = false;
     currentJSONData.moving_left = false;
     currentJSONData.moving_right = false;
+    console.log("element: "+element.id);
     if (element.id.toLowerCase() === "leftButton") {
         currentJSONData.moving_left = true;
     } else if (element.id.toLowerCase() === "rightButton") {
