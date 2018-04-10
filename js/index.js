@@ -46,6 +46,11 @@ function saveJSONData(message) {
 }
 
 function buttonPressed(element) {
+    if (webSocket === null) {
+        console.log("WEBSOCKET NOT CONNECTED!");
+        loadConnection();
+        return;
+    }
     currentJSONData = null;
     webSocket.send("return");
     while (currentJSONData === null) {
