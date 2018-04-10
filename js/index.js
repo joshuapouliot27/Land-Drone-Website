@@ -1,6 +1,7 @@
 var webSocket;
 var webSocketConnected;
 var currentJSONData;
+var autoRefresh;
 
 function tabClicked(contentType, element) {
 
@@ -38,14 +39,20 @@ function loadConnection() {
     };
     webSocket.onopen = function() {
         console.log("Connected Websocket!");
+        autoRefresh = setInterval(getData(), 1000);
     };
     webSocket.onclose = function() {
         console.log("Disconnected Websocket!");
+        clearInterval(autoRefresh);
     }
     webSocket.onmessage = function (message) {
         console.log("recieved message: "+message.data.toString());
         saveJSONData(message.data);
     };
+}
+
+function getData() {
+    webSocket.send("return");
 }
 
 function saveJSONData(message) {
@@ -58,10 +65,7 @@ function buttonPressed(element) {
         loadConnection();
         return;
     }
-    currentJSONData = null;
     webSocket.send("return");
-    while (currentJSONData === null) {
-    }
     currentJSONData.moving_forward = false;
     currentJSONData.moving_backward = false;
     currentJSONData.moving_left = false;
