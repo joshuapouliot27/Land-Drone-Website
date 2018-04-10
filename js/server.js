@@ -33,10 +33,8 @@ function makeEmptyJSON() {
         current_direction_degrees: null,
         current_distance_ahead: null,
         stop_everything: null
-    }
-    var JSONArray = [];
-    JSONArray.push(JSONObj);
-    return JSON.stringify(JSONArray);
+    };
+    return JSON.stringify(JSONObj);
 }
 
 function getJSONData() {
