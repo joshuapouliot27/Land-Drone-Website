@@ -73,19 +73,14 @@ function buttonPressed(element) {
     editedJSONData.moving_right = false;
     if (element.id.toLowerCase() === "leftbutton") {
         editedJSONData.moving_left = true;
-        console.log(editedJSONData.moving_left.toString());
     } else if (element.id.toLowerCase() === "rightbutton") {
         editedJSONData.moving_right = true;
-        console.log(editedJSONData.moving_right.toString());
     } else if (element.id.toLowerCase() === "upbutton") {
         editedJSONData.moving_forward = true;
-        console.log(editedJSONData.moving_forward.toString());
     } else if (element.id.toLowerCase() === "downbutton") {
         editedJSONData.moving_backward = true;
-        console.log(editedJSONData.moving_backward.toString());
     }
-    console.log(editedJSONData.moving_left.toString() + "\n" + JSON.stringify(editedJSONData)
-        + "\n" + editedJSONData["moving_left"].toString());
+    console.log(editedJSONData.toString() + "\n" + JSON.stringify(editedJSONData));
     webSocket.send(JSON.stringify(editedJSONData));
 
 }
