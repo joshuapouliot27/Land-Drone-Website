@@ -66,24 +66,21 @@ function buttonPressed(element) {
         loadConnection();
         return;
     }
-    currentJSONData.moving_forward = false;
-    currentJSONData.moving_backward = false;
-    currentJSONData.moving_left = false;
-    currentJSONData.moving_right = false;
+    editedJSONData = currentJSONData.clone()
+    editedJSONData.moving_forward = false;
+    editedJSONData.moving_backward = false;
+    editedJSONData.moving_left = false;
+    editedJSONData.moving_right = false;
     if (element.id.toLowerCase() === "leftbutton") {
-        currentJSONData.moving_left = true;
-        console.log("is left");
+        editedJSONData.moving_left = true;
     } else if (element.id.toLowerCase() === "rightbutton") {
-        currentJSONData.moving_right = true;
-        console.log("is right");
+        editedJSONData.moving_right = true;
     } else if (element.id.toLowerCase() === "upbutton") {
-        currentJSONData.moving_forward = true;
-        console.log("is forward");
+        editedJSONData.moving_forward = true;
     } else if (element.id.toLowerCase() === "downbutton") {
-        currentJSONData.moving_backward = true;
-        console.log("is backward");
+        editedJSONData.moving_backward = true;
     }
-    console.log("edited JSON: "+JSON.stringify(currentJSONData));
-    webSocket.send(JSON.stringify(currentJSONData));
+    console.log("edited JSON: "+JSON.stringify(editedJSONData));
+    webSocket.send(JSON.stringify(editedJSONData));
 
 }
