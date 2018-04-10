@@ -66,7 +66,7 @@ function buttonPressed(element) {
         loadConnection();
         return;
     }
-    editedJSONData = currentJSONData.clone()
+    var editedJSONData = JSON.parse(JSON.stringify(currentJSONData));
     editedJSONData.moving_forward = false;
     editedJSONData.moving_backward = false;
     editedJSONData.moving_left = false;
