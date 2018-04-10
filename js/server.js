@@ -44,7 +44,8 @@ function getJSONData() {
         saveJSONFile(makeEmptyJSON());
     }
     var JSONText = fs.readFileSync(json_filename).toString();
-    var JSONData = JSON.parse(jsonText);
+    console.log("text from file: "+JSONText);
+    var JSONData = JSON.parse(JSONText);
     return JSON.stringify(JSONData);
 }
 
