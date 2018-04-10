@@ -67,13 +67,13 @@ function buttonPressed(element) {
     currentJSONData.moving_backward = false;
     currentJSONData.moving_left = false;
     currentJSONData.moving_right = false;
-    if (element.id.toLowerCase() === "left") {
+    if (element.id.toLowerCase() === "leftButton") {
         currentJSONData.moving_left = true;
-    } else if (element.id.toLowerCase() === "right") {
+    } else if (element.id.toLowerCase() === "rightButton") {
         currentJSONData.moving_right = true;
-    } else if (element.id.toLowerCase() === "up") {
+    } else if (element.id.toLowerCase() === "upButton") {
         currentJSONData.moving_forward = true;
-    } else if (element.id.toLowerCase() === "down") {
+    } else if (element.id.toLowerCase() === "downButton") {
         currentJSONData.moving_backward = true;
     }
     console.log("edited JSON: "+JSON.stringify(currentJSONData));
