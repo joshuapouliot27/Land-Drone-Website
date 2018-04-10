@@ -49,7 +49,7 @@ function getJSONData() {
 }
 
 function saveJSONFile(message) {
-    JSONObj = JSON.parse(message);
-    JSONStr = JSONObj.stringify();
+    var JSONObj = JSON.parse(message);
+    var JSONStr = JSONObj.stringify();
     fs.writeFileSync(json_filename, JSONStr);
 }
