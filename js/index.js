@@ -38,6 +38,7 @@ function loadConnection() {
         console.log('error: ', err);
     };
     webSocket.onopen = function() {
+        getData();
         console.log("Connected Websocket!");
         autoRefresh = setInterval(getData, 50);
     };
@@ -69,15 +70,18 @@ function buttonPressed(element) {
     currentJSONData.moving_backward = false;
     currentJSONData.moving_left = false;
     currentJSONData.moving_right = false;
-    console.log("element: "+element.id.toLowerCase()+"; is leftbutton: "+(element.id.toLowerCase() === "leftbutton").toString());
     if (element.id.toLowerCase() === "leftbutton") {
         currentJSONData.moving_left = true;
+        console.log("is left");
     } else if (element.id.toLowerCase() === "rightbutton") {
         currentJSONData.moving_right = true;
+        console.log("is right");
     } else if (element.id.toLowerCase() === "upbutton") {
         currentJSONData.moving_forward = true;
+        console.log("is forward");
     } else if (element.id.toLowerCase() === "downbutton") {
         currentJSONData.moving_backward = true;
+        console.log("is backward");
     }
     console.log("edited JSON: "+JSON.stringify(currentJSONData));
     webSocket.send(JSON.stringify(currentJSONData));
