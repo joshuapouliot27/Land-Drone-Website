@@ -69,7 +69,7 @@ function buttonPressed(element) {
     currentJSONData.moving_backward = false;
     currentJSONData.moving_left = false;
     currentJSONData.moving_right = false;
-    console.log("element: "+element.id.toLowerCase()+"; is leftbutton: "+(element.is.toLowerCase() === "leftbutton").toString());
+    console.log("element: "+element.id.toLowerCase()+"; is leftbutton: "+(element.id.toLowerCase() === "leftbutton").toString());
     if (element.id.toLowerCase() === "leftbutton") {
         currentJSONData.moving_left = true;
     } else if (element.id.toLowerCase() === "rightbutton") {
