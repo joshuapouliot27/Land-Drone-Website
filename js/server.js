@@ -15,10 +15,10 @@ wss.on('connection', function(ws) {
 });
 
 function checkMessage(message) {
-    if (message.toLowerCase() === "return") {
+    if (message.data.toLowerCase() === "return") {
         return true;
     }
-    saveJSONFile(message);
+    saveJSONFile(message.data);
     return false;
 }
 
@@ -49,8 +49,8 @@ function getJSONData() {
     return JSON.stringify(JSONData);
 }
 
-function saveJSONFile(message) {
-    var JSONObj = JSON.parse(message);
+function saveJSONFile(string) {
+    var JSONObj = JSON.parse(string);
     var JSONStr = JSON.stringify(JSONObj);
     fs.writeFileSync(json_filename, JSONStr);
 }

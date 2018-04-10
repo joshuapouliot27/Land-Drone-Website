@@ -38,8 +38,8 @@ function loadConnection() {
         console.log('error: ', err);
     };
     webSocket.onmessage = function (message) {
-        console.log("recieved message: "+message.toString());
-        saveJSONData(message);
+        console.log("recieved message: "+message.data.toString());
+        saveJSONData(message.data);
     };
 }
 
