@@ -45,11 +45,11 @@ function getJSONData() {
     }
     var JSONText = fs.readFileSync(json_filename).toString();
     var JSONData = JSON.parse(jsonText);
-    return JSONData.stringify();
+    return JSON.stringify(JSONData);
 }
 
 function saveJSONFile(message) {
     var JSONObj = JSON.parse(message);
-    var JSONStr = JSONObj.stringify();
+    var JSONStr = JSON.stringify(JSONObj);
     fs.writeFileSync(json_filename, JSONStr);
 }
