@@ -62,15 +62,16 @@ function buttonPressed(element) {
     currentJSONData.moving_backward = false;
     currentJSONData.moving_left = false;
     currentJSONData.moving_right = false;
-    if (element.id.toLowerCase().contains("left")) {
+    if (element.id.toLowerCase() === "left") {
         currentJSONData.moving_left = true;
-    } else if (element.id.toLowerCase().contains("right")) {
+    } else if (element.id.toLowerCase() === "right") {
         currentJSONData.moving_right = true;
-    } else if (element.id.toLowerCase().contains("up")) {
+    } else if (element.id.toLowerCase() === "up") {
         currentJSONData.moving_forward = true;
-    } else if (element.id.toLowerCase().contains("down")) {
+    } else if (element.id.toLowerCase() === "down") {
         currentJSONData.moving_backward = true;
     }
-    webSocket.send(JSON.stringify(currentJSONData))
+    console.log("edited JSON: "+JSON.stringify(currentJSONData));
+    webSocket.send(JSON.stringify(currentJSONData));
 
 }
