@@ -15,12 +15,10 @@ wss.on('connection', function(ws) {
 });
 
 function checkMessage(message) {
-    console.log("message: "+message);
-    console.log("message data: "+message.data);
-    if (message.data.toString().toLowerCase() === "return") {
+    if (message.toString().toLowerCase() === "return") {
         return true;
     }
-    saveJSONFile(message.data);
+    saveJSONFile(message);
     return false;
 }
 
