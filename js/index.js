@@ -39,7 +39,7 @@ function loadConnection() {
     };
     webSocket.onopen = function() {
         console.log("Connected Websocket!");
-        autoRefresh = setInterval(getData(), 1000);
+        autoRefresh = setInterval(getData, 1000);
     };
     webSocket.onclose = function() {
         console.log("Disconnected Websocket!");
@@ -65,7 +65,6 @@ function buttonPressed(element) {
         loadConnection();
         return;
     }
-    webSocket.send("return");
     currentJSONData.moving_forward = false;
     currentJSONData.moving_backward = false;
     currentJSONData.moving_left = false;
