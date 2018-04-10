@@ -79,8 +79,10 @@ function buttonPressed(element) {
         editedJSONData.moving_forward = true;
     } else if (element.id.toLowerCase() === "downbutton") {
         editedJSONData.moving_backward = true;
+        console.log(JSON.stringify(editedJSONData));
     }
-    console.log(editedJSONData.toString() + "\n" + JSON.stringify(editedJSONData));
+    console.log(JSON.stringify(JSON.parse(JSON.stringify(editedJSONData))));
+    console.log(JSON.stringify(editedJSONData));
     webSocket.send(JSON.stringify(editedJSONData));
 
 }
