@@ -38,7 +38,7 @@ function makeEmptyJSON() {
 
 function getJSONData() {
     if (!fs.existsSync(json_filename)) {
-        saveJSONFile(make_empty_json);
+        saveJSONFile(makeEmptyJSON());
     }
     var JSONText = fs.readFileSync(json_filename).toString();
     var JSONData = JSON.parse(jsonText);
