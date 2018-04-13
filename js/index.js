@@ -40,7 +40,7 @@ function loadConnection() {
     webSocket.onopen = function() {
         getData();
         console.log("Connected Websocket!");
-        autoRefresh = setInterval(getData, 1/2.5);
+        autoRefresh = setInterval(getData, (1/2.5)*1000);
     };
     webSocket.onclose = function() {
         console.log("Disconnected Websocket!");
