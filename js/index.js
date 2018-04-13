@@ -67,18 +67,48 @@ function buttonPressed(element) {
         return;
     }
     var editedJSONData = JSON.parse(JSON.stringify(currentJSONData));
-    editedJSONData.moving_forward = false;
-    editedJSONData.moving_backward = false;
-    editedJSONData.moving_left = false;
-    editedJSONData.moving_right = false;
     if (element.id.toLowerCase() === "leftbutton") {
-        editedJSONData.moving_left = true;
+        editedJSONData.moving_forward = false;
+        editedJSONData.moving_backward = false;
+        editedJSONData.moving_right = false;
+        if (editedJSONData.moving_left === true) {
+            editedJSONData.moving_left = false;
+        } else {
+            editedJSONData.moving_left = true;
+        }
     } else if (element.id.toLowerCase() === "rightbutton") {
-        editedJSONData.moving_right = true;
+        editedJSONData.moving_forward = false;
+        editedJSONData.moving_backward = false;
+        editedJSONData.moving_left = false;
+        if (editedJSONData.moving_right === true) {
+            editedJSONData.moving_right = false;
+        } else {
+            editedJSONData.moving_right = true;
+        }
     } else if (element.id.toLowerCase() === "upbutton") {
-        editedJSONData.moving_forward = true;
+        editedJSONData.moving_backward = false;
+        editedJSONData.moving_left = false;
+        editedJSONData.moving_right = false;
+        if (editedJSONData.moving_forward === true) {
+            editedJSONData.moving_forward = false;
+        } else {
+            editedJSONData.moving_forward = true;
+        }
     } else if (element.id.toLowerCase() === "downbutton") {
-        editedJSONData.moving_backward = true;
+        editedJSONData.moving_forward = false;
+        editedJSONData.moving_left = false;
+        editedJSONData.moving_right = false;
+        if (editedJSONData.moving_backward === true) {
+            editedJSONData.moving_backward = false;
+        } else {
+            editedJSONData.moving_backward = true;
+        }
+    } else if (element.id.toLowerCase() === "stopbutton") {
+        if (editedJSONData.stop_everything === true) {
+            editedJSONData.stop_everything = false;
+        } else {
+            editedJSONData.stop_everything = true;
+        }
     }
     webSocket.send(JSON.stringify(editedJSONData));
 
