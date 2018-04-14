@@ -104,7 +104,6 @@ function buttonPressed(element) {
             editedJSONData.moving_backward = true;
         }
     } else if (element.id.toLowerCase() === "stopbutton") {
-        console.log("emergency stop")
         if (editedJSONData.stop_everything === true) {
             editedJSONData.stop_everything = false;
         } else {
