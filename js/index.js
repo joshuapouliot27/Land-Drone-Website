@@ -38,7 +38,6 @@ function loadConnection() {
 function getData() {
     console.log("fetching data");
     webSocket.send("return");
-    setLabels()
 }
 
 function setLabels() {
