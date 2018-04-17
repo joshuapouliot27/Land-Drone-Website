@@ -1,5 +1,4 @@
 var webSocket;
-var webSocketConnected;
 var currentJSONData;
 var autoRefresh;
 
@@ -22,12 +21,7 @@ function tabClicked(contentType, element) {
         svgAltElements[n].style.display = "inherit";
     }
 
-    if (contentType.toLowerCase() === "mapgps") {
-        buttonPressed(element);
-    }
-
-    tabContent = document.getElementById(contentType);
-    tabContent.style.display = "inherit";
+    document.getElementById(contentType).style.display = "inherit";
 }
 
 function loadConnection() {
