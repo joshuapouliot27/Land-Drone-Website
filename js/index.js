@@ -43,12 +43,12 @@ function getData() {
 function setLabels() {
     var copyJSONData = JSON.parse(JSON.stringify(currentJSONData));
     document.getElementById("latitude_longitude").innerHTML
-        = "Latitude: " + copyJSONData.current_latitude +
-        ", Longitude: " + copyJSONData.current_longitude;
+        = "Latitude: " + copyJSONData.current_latitude.toString() +
+        ", Longitude: " + copyJSONData.current_longitude.toString();
     document.getElementById("distance_ahead").innerHTML =
-        "Distance ahead: "+copyJSONData.current_distance_ahead+"ft";
+        "Distance ahead: "+copyJSONData.current_distance_ahead.toString()+"ft";
     document.getElementById("direction").innerHTML
-        = "Direction: "+copyJSONData.current_direction_degrees+"°";
+        = "Direction: "+copyJSONData.current_direction_degrees.toString()+"°";
 }
 
 function saveJSONData(message) {
