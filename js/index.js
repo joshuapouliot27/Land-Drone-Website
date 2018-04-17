@@ -22,10 +22,7 @@ function loadConnection() {
     webSocket.onopen = function() {
         getData();
         console.log("Connected Websocket!");
-        autoRefresh = setInterval(function() {
-            getData();
-            setLabels();
-        }, 500);
+        autoRefresh = setInterval(getData, 500);
     };
     webSocket.onclose = function() {
         console.log("Disconnected Websocket!");
@@ -34,6 +31,7 @@ function loadConnection() {
     webSocket.onmessage = function (message) {
         console.log("recieved message: "+message.data.toString());
         saveJSONData(message.data);
+        setLabels();
     };
 }
 
