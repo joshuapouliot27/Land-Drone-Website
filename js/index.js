@@ -37,6 +37,18 @@ function loadConnection() {
 function getData() {
     console.log("fetching data");
     webSocket.send("return");
+    setLabels()
+}
+
+function setLabels() {
+    var copyJSONData = JSON.parse(JSON.stringify(currentJSONData));
+    document.getElementById("latitude_longitude").innerHTML
+        = "Latitude: " + copyJSONData.current_latitude +
+        ", Longitude: " + copyJSONData.current_longitude;
+    document.getElementById("distance_ahead").innerHTML =
+        "Distance ahead: "+copyJSONData.current_distance_ahead+"ft";
+    document.getElementById("direction").innerHTML
+        = "Direction: "+copyJSONData.current_direction_degrees+"°";
 }
 
 function saveJSONData(message) {
