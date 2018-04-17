@@ -22,7 +22,10 @@ function loadConnection() {
     webSocket.onopen = function() {
         getData();
         console.log("Connected Websocket!");
-        autoRefresh = setInterval(getData, (0.5)*1000);
+        autoRefresh = setInterval(function() {
+            getData();
+            setLabels();
+        }, 500);
     };
     webSocket.onclose = function() {
         console.log("Disconnected Websocket!");
