@@ -40,7 +40,7 @@ function loadConnection() {
     webSocket.onopen = function() {
         getData();
         console.log("Connected Websocket!");
-        autoRefresh = setInterval(getData, (1/2.5)*1000);
+        autoRefresh = setInterval(getData, (0.5)*1000);
     };
     webSocket.onclose = function() {
         console.log("Disconnected Websocket!");
@@ -54,6 +54,7 @@ function loadConnection() {
 
 function getData() {
     webSocket.send("return");
+    console.log("fetched data");
 }
 
 function saveJSONData(message) {
@@ -67,6 +68,7 @@ function buttonPressed(element) {
         return;
     }
     var editedJSONData = JSON.parse(JSON.stringify(currentJSONData));
+    console.log("button, "+element.id.toString()+", pressed");
     if (element.id.toLowerCase() === "leftbutton") {
         editedJSONData.moving_forward = false;
         editedJSONData.moving_backward = false;
