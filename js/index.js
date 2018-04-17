@@ -11,16 +11,6 @@ function tabClicked(contentType, element) {
         tabbedContent.item(n).style.display = "none";
     }
 
-    var svgElements, svgAltElements;
-    svgElements = document.getElementsByTagName("svg")
-    svgAltElements = document.getElementsByClassName("svgAlt")
-    for (n = 0; n< svgElements.length; n++) {
-        svgElements[n].style.display = "none";
-    }
-    for (n = 0; n < svgAltElements.length; n++) {
-        svgAltElements[n].style.display = "inherit";
-    }
-
     document.getElementById(contentType).style.display = "inherit";
 }
 
