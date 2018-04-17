@@ -31,7 +31,7 @@ function tabClicked(contentType, element) {
 }
 
 function loadConnection() {
-    webSocket = new WebSocket("ws://raspberrypi.local:8081");
+    webSocket = new WebSocket("ws://raspberrypi.local:8181");
     webSocket.onerror = function (err) {
         console.log('error: ', err);
     };
