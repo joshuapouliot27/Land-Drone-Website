@@ -109,6 +109,10 @@ function buttonPressed(element) {
         } else {
             editedJSONData.stop_everything = true;
         }
+    } else if (element.id.toLowerCase() === "tabmanual") {
+        editedJSONData.automated = false;
+    } else if (element.id.toLowerCase() === "tabautomated") {
+        editedJSONData.automated = true;
     }
     webSocket.send(JSON.stringify(editedJSONData));
 

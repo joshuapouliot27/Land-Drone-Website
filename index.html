@@ -22,8 +22,8 @@
 
         <div class="mainContent" id="mainContent">
             <div class="tabs">
-                <button class="tabLinks" onclick="tabClicked('manualControls', this)">Manual Control</button>
-                <button class="tabLinks" onclick="tabClicked('mapGPS', this)">Automated</button>
+                <button class="tabLinks" id="tabManual" onclick="tabClicked('manualControls', this); buttonPressed(this)">Manual Control</button>
+                <button class="tabLinks" id= "tabAutomated" onclick="tabClicked('mapGPS', this); buttonPressed(this)">Automated</button>
             </div>
 
             <div class="tabbedContent" id="manualControls">
