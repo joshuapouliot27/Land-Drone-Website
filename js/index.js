@@ -5,23 +5,21 @@ var autoRefresh;
 
 function tabClicked(contentType, element) {
 
-    var i, n, tabbedContent, newContent;
+    var n, tabbedContent;
 
     tabbedContent = document.getElementsByClassName("tabbedContent");
     for (n=0; n<tabbedContent.length; n++) {
         tabbedContent.item(n).style.display = "none";
     }
-    console.log(Modernizr.svg)
-    if (Modernizr.svg) {
-        var svgElements, svgAltElements;
-        svgElements = document.getElementsByTagName("svg")
-        svgAltElements = document.getElementsByClassName("svgAlt")
-        for (n = 0; n< svgElements.length; n++) {
-            svgElements[n].style.display = "none";
-        }
-        for (n = 0; n < svgAltElements.length; n++) {
-            svgAltElements[n].style.display = "inherit";
-        }
+
+    var svgElements, svgAltElements;
+    svgElements = document.getElementsByTagName("svg")
+    svgAltElements = document.getElementsByClassName("svgAlt")
+    for (n = 0; n< svgElements.length; n++) {
+        svgElements[n].style.display = "none";
+    }
+    for (n = 0; n < svgAltElements.length; n++) {
+        svgAltElements[n].style.display = "inherit";
     }
 
     if (contentType.toLowerCase() === "mapgps") {
@@ -45,7 +43,7 @@ function loadConnection() {
     webSocket.onclose = function() {
         console.log("Disconnected Websocket!");
         clearInterval(autoRefresh);
-    }
+    };
     webSocket.onmessage = function (message) {
         console.log("recieved message: "+message.data.toString());
         saveJSONData(message.data);
@@ -53,8 +51,8 @@ function loadConnection() {
 }
 
 function getData() {
+    console.log("fetching data");
     webSocket.send("return");
-    console.log("fetched data");
 }
 
 function saveJSONData(message) {
