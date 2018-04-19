@@ -29,7 +29,6 @@ function loadConnection() {
         clearInterval(autoRefresh);
     };
     webSocket.onmessage = function (message) {
-        console.log("Message Recieved: "+message.data.toString());
         saveJSONData(message.data);
         setLabels();
     };
