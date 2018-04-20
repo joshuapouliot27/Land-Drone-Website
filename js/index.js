@@ -30,7 +30,6 @@ function loadConnection() {
     };
     webSocket.onmessage = function (message) {
         saveJSONData(message.data);
-        setLabels();
     };
 }
 
@@ -39,16 +38,6 @@ function getData() {
     webSocket.send("return");
 }
 
-function setLabels() {
-    var copyJSONData = JSON.parse(JSON.stringify(currentJSONData));
-    document.getElementById("latitude_longitude").innerHTML
-        = "Latitude: " + copyJSONData.current_latitude.toString() +
-        ", Longitude: " + copyJSONData.current_longitude.toString();
-    document.getElementById("distance_ahead").innerHTML =
-        "Distance ahead: "+copyJSONData.current_distance_ahead.toString()+"ft";
-    document.getElementById("direction").innerHTML
-        = "Direction: "+copyJSONData.current_direction_degrees.toString()+"°";
-}
 
 function saveJSONData(message) {
     currentJSONData = JSON.parse(message);
@@ -110,5 +99,6 @@ function buttonPressed(element) {
         editedJSONData.automated = true;
     }
     webSocket.send(JSON.stringify(editedJSONData));
+    webSocket.send("return")
 
 }
